@@ -1,0 +1,21 @@
+{
+  "name": "bevy_web_template",
+  "private": true,
+  "description": "Template for a Game using the awesome Bevy engine featuring out of the box builds for Web (Wasm).",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:rust_src": "wasm-pack build rust_src -t web -s internal",
+    "postinstall": "npm run build:rust_src",
+    "start": "run-p start:vite watch:rust_src",
+    "start:vite": "vite . --host",
+    "watch:rust_src": "cd rust_src && cargo watch --why -i .gitignore -i 'pkg/*' -s 'npm run build:rust_src -- --dev'",
+    "build": "npm run build:rust_src && vite build"
+  },
+  "dependencies": {
+    "@internal/game": "./rust_src/pkg"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "vite": "^4.0.0"
+  }
+}
