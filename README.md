@@ -9,6 +9,17 @@ Template for a Game using the awesome Bevy engine featuring out of the box build
 
 # Required
 
-- Rust
+- rust
 - cargo-watch
-- nodejs
+- wasm-pack
+- wasm-bindgen-cli
+- nodejs > 16
+
+# Started
+
+- Install Dependencies
+
+```bash
+sh build_rust_src.sh
+npm install 
+```

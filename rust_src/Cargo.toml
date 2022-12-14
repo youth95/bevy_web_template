@@ -2,10 +2,10 @@
 authors = ["admin <zhaoqian.ipp@bytedance.net>"]
 description = ""
 edition = "2018"
-resolver = "2"
 license = "MIT"
 name = "game"
 repository = ""
+resolver = "2"
 version = "0.1.0"
 
 [lib]
@@ -35,8 +35,8 @@ version = "0.9.1"
 features = [
   "render",
   "bevy_asset",
-  "bevy_winit", # "bevy_gilrs", 
-  "png", # "hdr",  # "filesystem_watcher",  # "x11"
+  "bevy_winit",
+  "png",
 ]
 
 [dev-dependencies]
@@ -45,3 +45,7 @@ wasm-bindgen-test = "0.3.13"
 [profile.release]
 # Tell `rustc` to optimize for small code size.
 opt-level = "s"
+debug = 1
+
+[package.metadata]
+wasm-opt = false

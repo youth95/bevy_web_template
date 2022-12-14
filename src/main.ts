@@ -1,8 +1,3 @@
-import init, { run } from '@internal/game';
+import './init';
 
-async function main() {
-  await init();
-  run();
-}
-
-main();
+// your other code in web

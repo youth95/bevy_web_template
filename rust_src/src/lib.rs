@@ -1,3 +1,4 @@
+mod game;
 mod utils;
 
 use bevy::prelude::*;
@@ -20,10 +21,11 @@ pub fn run() {
         .add_plugins(DefaultPlugins.set(WindowPlugin {
             window: WindowDescriptor {
                 canvas: Some("#game-main-canvas".to_string()),
-                fit_canvas_to_parent: true,
+                fit_canvas_to_parent: false,
                 ..default()
             },
             ..default()
         }))
+        .add_plugin(game::GamePlugin)
         .run()
 }
